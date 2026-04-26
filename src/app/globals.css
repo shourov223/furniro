@@ -7,3 +7,7 @@ body {
 @utility container {
   @apply max-w-[1286px] mx-auto px-[20px];
 }
+
+@theme {
+  --color-primary: #b88e2f;
+}
