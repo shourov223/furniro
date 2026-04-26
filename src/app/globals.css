@@ -3,7 +3,6 @@
 body {
   font-family: var(--font-poppins);
 }
-
 @utility container {
   @apply max-w-[1286px] mx-auto px-[20px];
 }
