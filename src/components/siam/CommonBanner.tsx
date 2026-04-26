@@ -1,27 +1,29 @@
-import Image from 'next/image'
-const CommonBanner = () => {
-  return (
-<section className="bg-[url('/bannerContent.png')] bg-cover bg-center h-[500px] w-full">
-    <div className="container">
-      <div className="pt-[61px] pb-[97px] flex items-center justify-center">
-       <div>
-         <Image 
-        src="/banner-logo.png"  
-        alt="My Icon"
-        width={77}     
-        height={77}     
-      />
-      <h2 className='text-[48px] font-medium'></h2>
-       <div>
-        <h3>Home</h3>
-        <img src={"/public/banner-icon.png"} alt="" />
-       </div>
-       </div>
-       
-      </div>
-    </div>
-</section>
-  )
-}
+import Image from "next/image";
+import bannerlogo from "@/assets/icons/banner-logo.png";
+import bannerIcon from "@/assets/icons/banner-icon.png";
 
-export default CommonBanner
+const CommonBanner = ({ pageName }: { pageName: string }) => {
+  return (
+    <section className="bg-[url('../assets/images/bannerCommon.png')] bg-cover bg-center w-full pt-[61px] pb-[97px]">
+      <div className="container">
+        <div className="text-center">
+          <div className="size-[77px] mx-auto">
+            <Image src={bannerlogo} alt="My Icon" width={77} height={77} />
+          </div>
+          <h2 className="text-[48px] font-medium">{pageName}</h2>
+          <div className="text-center ">
+            <div className="flex items-center justify-center gap-3">
+              <h3 className="text-4 font-medium text-[#000000]">Home</h3>
+              <div className="text-center">
+                <Image src={bannerIcon} alt="" height={10} width={10} />
+              </div>
+              <p className="font-light text-4">{pageName}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CommonBanner;
