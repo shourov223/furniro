@@ -10,6 +10,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Furniro",
   description: "Furniro app next.js",
+  icons : {
+    icon : "/logo.svg"
+  }
 };
 
 export default function RootLayout({
