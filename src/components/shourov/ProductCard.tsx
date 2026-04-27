@@ -1,4 +1,8 @@
 import Image from "next/image"
+import shrare from "@/assets/icons/share.svg"
+import compare from "@/assets/icons/compare.svg"
+import like from "@/assets/icons/like.svg"
+
 
 export interface ProductCardProps {
     img: string;
@@ -13,7 +17,30 @@ export interface ProductCardProps {
 
 const ProductCard = ({ img, productName, price, category, oldPrice, discountPercentage, availabilityStatus }: ProductCardProps) => {
     return (
-        <div>
+        <div className="relative group">
+            <div className="absolute top-0 left-0 min-w-0 h-full bg-black opacity-0 group-hover:opacity-50 group-hover:min-w-full transition-all duration-300">
+                <div className="relative w-full h-full">
+                    <div className="absolute w-full h-full top-[50%] left-[50%] transform translate-x-[-50%] z-50">
+                        <button className="py-3 px-[52px] bg-white whitespace-nowrap text-[#E89F71] font-semibold cursor-pointer grid place-items-center mb-[20px] block mx-auto">
+                            Add to Cart
+                        </button>
+                        <div className="flex items-center justify-center gap-[20px]">
+                            <div className="flex items-center gap-px">
+                                <Image src={shrare} alt="Share" />
+                                <p className="text-base font-semibold text-white">Share</p>
+                            </div>
+                            <div className="flex items-center gap-px">
+                                <Image src={compare} alt="Compare" />
+                                <p className="text-base font-semibold text-white">Compare</p>
+                            </div>
+                            <div className="flex items-center gap-px">
+                                <Image src={like} alt="Like" />
+                                <p className="text-base font-semibold text-white">Like</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className="w-full h-[301px] relative">
                 <div className={`size-[48px] rounded-full absolute top-6 right-6 ${availabilityStatus === 'In Stock' ? 'bg-[#2EC1AC]' : 'bg-[#E97171]'} flex items-center justify-center`}>
                     <span className="text-base text-white">-{discountPercentage.toFixed(1)}%</span>
