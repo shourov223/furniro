@@ -19,7 +19,7 @@ const OurProducts = async () => {
             <div className="container">
                 <h2 className="text-[#3A3A3A] text-[40px] font-semibold pb-[32px] text-center">Our Products</h2>
                 <div className="grid grid-cols-4 gap-[32px] items-center">
-                    {allData?.map((product) => (
+                    {allData?.slice(0, 8).map((product) => (
                         <ProductCard
                             key={product.id}
                             img={product.thumbnail}
@@ -32,6 +32,9 @@ const OurProducts = async () => {
                         />
                     ))}
                 </div>
+                <button className="py-3 px-[72px] border border-primary text-primary text-base font-semibold cursor-pointer mt-8 block mx-auto">
+                    Show More
+                </button>
             </div>
         </section>
     )
