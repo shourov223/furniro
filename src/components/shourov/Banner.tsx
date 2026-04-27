@@ -1,6 +1,5 @@
 import Link from "next/link";
 import CommonBtn from "./CommonBtn";
-import { useRef } from "react";
 
 const Banner = () => {
   return (
@@ -21,15 +20,7 @@ const Banner = () => {
             title="button"
             className="py-[25px] px-[72px] bg-[var(--color-primary)] text-white font-semibold cursor-pointer"
           >
-            <span></span>
-          </CommonBtn>
-          <CommonBtn
-            TagName={Link}
-            href={"/"}
-            title="button"
-            className="py-[25px] px-[72px] bg-[var(--color-primary)] text-white font-semibold cursor-pointer"
-          >
-            Common BTN
+            BUY Now
           </CommonBtn>
         </div>
       </div>

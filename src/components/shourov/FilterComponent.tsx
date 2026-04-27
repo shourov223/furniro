@@ -2,16 +2,8 @@ import Image from "next/image";
 import filter_ico from "@/assets/icons/filter_ico.svg";
 import dots from "@/assets/icons/dots.svg";
 import icons_three from "@/assets/icons/icons_three.svg";
-import fetchData from "@/api/ProductAPI";
-import ProductCard from "./ProductCard";
-
-interface productType {
-  thumbnail: string;
-}
 
 const FilterComponent = async () => {
-  const allProductData = await fetchData();
-
   return (
     <section className="py-[36px] bg-[#F9F1E7]">
       <div className="container">
@@ -41,26 +33,12 @@ const FilterComponent = async () => {
             <CommonInput text={"Short by"} />
           </div>
         </div>
-        <div>
-          {allProductData?.map((item) => (
-            <ProductCard
-              img={item.thumbnail}
-              category={item.category}
-              availabilityStatus={item.availabilityStatus}
-              discountPercentage={item.discountPercentage}
-              oldPrice={item.oldPrice}
-              price={item.price}
-              productName={item.title}
-              key={item.id}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
 };
 
-const CommonInput = ({ text }) => {
+const CommonInput = ({ text }: { text: string }) => {
   return (
     <div className="flex items-center gap-4">
       <p className="text-[20px] text-black">{text}</p>
