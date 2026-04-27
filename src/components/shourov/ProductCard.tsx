@@ -41,13 +41,13 @@ const ProductCard = ({ img, productName, price, category, oldPrice, discountPerc
                     </div>
                 </div>
             </div>
-            <div className="w-full h-[301px] relative">
+            <div className="w-full h-[301px] relative group-hover:blur-[1px]">
                 <div className={`size-[48px] rounded-full absolute top-6 right-6 ${availabilityStatus === 'In Stock' ? 'bg-[#2EC1AC]' : 'bg-[#E97171]'} flex items-center justify-center`}>
                     <span className="text-base text-white">-{discountPercentage.toFixed(1)}%</span>
                 </div>
                 <Image src={img} alt="Product" width={285} height={301} className="w-full h-full object-cover" />
             </div>
-            <div className="bg-[#F4F5F7] px-4 pt-4 pb-[30px]">
+            <div className="bg-[#F4F5F7] px-4 pt-4 pb-[30px] group-hover:blur-[1px]">
                 <h3 className="text-[#3A3A3A] text-[20px] font-semibold">{productName}</h3>
                 <p className="text-base text-[#898989] py-2">{category}</p>
                 <div className="flex items-center gap-4">
