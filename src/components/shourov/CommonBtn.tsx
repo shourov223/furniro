@@ -1,22 +1,22 @@
-import Link from "next/link";
 
-type btnProps = {
-  children: string;
-  TagName: "button" | typeof Link;
-  className: string;
-  href: string;
-};
+import { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
-const CommonBtn = ({ children, TagName, className, href }: btnProps) => {
-  return (
-    <TagName
-      href={href}
-      className={className}
-      {...(TagName !== "button" ? { href } : null)}
-    >
-      {children}
-    </TagName>
-  );
+type CommonBtnProps<T extends ElementType> = {
+  TagName?: T;
+  children: ReactNode;
+} 
+
+& ComponentPropsWithoutRef<T>;
+
+const CommonBtn = <T extends ElementType = "button">({
+  children,
+  TagName,
+  ...props
+}: CommonBtnProps<T>) => {
+  // Fallback to "button" if TagName is undefined
+  const Component = TagName || "button";
+
+  return <Component {...props}>{children}</Component>;
 };
 
 export default CommonBtn;

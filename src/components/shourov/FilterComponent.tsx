@@ -2,13 +2,20 @@ import Image from "next/image";
 import filter_ico from "@/assets/icons/filter_ico.svg";
 import dots from "@/assets/icons/dots.svg";
 import icons_three from "@/assets/icons/icons_three.svg";
-import CommonBtn from "./CommonBtn";
+import fetchData from "@/api/ProductAPI";
+import ProductCard from "./ProductCard";
 
-const FilterComponent = () => {
+interface productType {
+  thumbnail: string;
+}
+
+const FilterComponent = async () => {
+  const allProductData = await fetchData();
+
   return (
     <section className="py-[36px] bg-[#F9F1E7]">
       <div className="container">
-        <div>
+        <div className="flex items-center justify-between gap-5">
           <div className="flex items-center gap-[30px]">
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-3">
@@ -29,11 +36,24 @@ const FilterComponent = () => {
               <p className="text-base text-black">Showing 1–16 of 32 results</p>
             </div>
           </div>
-          <div>
-            <CommonBtn TagName="button" className="">
-              Butrton
-            </CommonBtn>
+          <div className="flex items-center gap-[30px]">
+            <CommonInput text={"Show"} />
+            <CommonInput text={"Short by"} />
           </div>
+        </div>
+        <div>
+          {allProductData?.map((item) => (
+            <ProductCard
+              img={item.thumbnail}
+              category={item.category}
+              availabilityStatus={item.availabilityStatus}
+              discountPercentage={item.discountPercentage}
+              oldPrice={item.oldPrice}
+              price={item.price}
+              productName={item.title}
+              key={item.id}
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -45,8 +65,8 @@ const CommonInput = ({ text }) => {
     <div className="flex items-center gap-4">
       <p className="text-[20px] text-black">{text}</p>
       <input
-        type="number"
-        className="py-3 px-[18px] bg-white text-[#9F9F9F] text-[20px]"
+        type="text"
+        className="py-3 px-[18px] bg-white text-[#9F9F9F] text-[20px] focus:outline-0 size-[50px]"
       />
     </div>
   );
