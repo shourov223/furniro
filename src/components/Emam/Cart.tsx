@@ -33,7 +33,7 @@ const CartPage = () => {
               </ul>
             </div>
             <CartMini
-              img={sampleSofa.image}
+              src={sampleSofa.image}
               price={sampleSofa.price}
               title="hdfsfs"
               subPrice={sampleSofa.subPrice}
