@@ -1,7 +1,8 @@
 "useClient"
 
+import { StaticImageData } from 'next/image';
 import CartMini from './CartMini';
-
+import  sofa from "@/assets/images/m.jpg"
 
 
 export interface CartItem  {
@@ -10,7 +11,7 @@ export interface CartItem  {
   subPrice:number ;
   price: number;
   quantity: number;
-  image: string;
+  image: string | StaticImageData;
 }
 
 
@@ -22,7 +23,7 @@ const CartPage = () => {
     price: 250000,
     subPrice: 25000,
     quantity: 1,
-    image: '/furniro/src/assets/images/m.jpg' // public ফোল্ডারে ইমেজ থাকতে হবে
+    image: sofa // public ফোল্ডারে ইমেজ থাকতে হবে
   };
 
   return (
@@ -38,7 +39,7 @@ const CartPage = () => {
                   <li>Subtotal</li>
                 </ul>
               </div>
-                <CartMini img={sampleSofa.image} price={sampleSofa.price} title='hdfsfs' subPrice={sampleSofa.subPrice} />
+                <CartMini src={sampleSofa.image} price={sampleSofa.price} title='hdfsfs' subPrice={sampleSofa.subPrice} />
             </div>
 
 
