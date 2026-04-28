@@ -17,14 +17,21 @@ const AllProductSection = async () => {
   return (
     <section className="py-[63px]">
       <div className="container">
-        <div className="grid grid-cols-3 items-center gap-8">
+        <div className="grid grid-cols-4 items-center gap-8">
           {allProductData?.map((item) => (
             <ProductCard
               img={item.thumbnail}
               category={item.category}
               availabilityStatus={item.availabilityStatus}
               discountPercentage={item.discountPercentage}
-              oldPrice={item.oldPrice}
+              oldPrice={
+                item.price +
+                Number(
+                  ((item.price * item.discountPercentage) / 100).toFixed(
+                    1,
+                  ),
+                )
+              }
               price={item.price}
               productName={item.title}
               key={item.id}

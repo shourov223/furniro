@@ -1,3 +1,4 @@
+import Link from "next/link"
 
 
 const Footer = () => {
@@ -14,10 +15,10 @@ const Footer = () => {
                 <div className="space-y-8">
                     <h3 className="text-gray-400 font-medium">Links</h3>
                     <ul className="space-y-6 font-bold text-black">
-                        <li><a href="#" className="hover:text-gray-600 transition">Home</a></li>
-                        <li><a href="#" className="hover:text-gray-600 transition">Shop</a></li>
-                        <li><a href="#" className="hover:text-gray-600 transition">About</a></li>
-                        <li><a href="#" className="hover:text-gray-600 transition">Contact</a></li>
+                        <li><Link href="/" className="hover:text-gray-600 transition">Home</Link></li>
+                        <li><Link href="/allproduct" className="hover:text-gray-600 transition">Shop</Link></li>
+                        <li><Link href="/blog" className="hover:text-gray-600 transition">About</Link></li>
+                        <li><Link href="/contact" className="hover:text-gray-600 transition">Contact</Link></li>
                     </ul>
                 </div>
                 <div className="space-y-8">
