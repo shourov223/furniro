@@ -21,6 +21,7 @@ const CartMini: React.FC<CartMini> = ({ title, price, subPrice, src }) => {
       </div>
       <div className="ml-[140px]">
         <input
+          readOnly
           type="text"
           className="w-[32px] h-[32px] flex  justify-center items-center px-2 border-2 rounded-[4px] "
         />
