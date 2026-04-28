@@ -1,9 +1,16 @@
-"use client";
-
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 
-const products = [
+interface Product {
+    name: string;
+    price: string;
+    rating: number;
+    reviews: number;
+    image: string;
+    specs: Record<string, string>;
+}
+
+const products: Product[] = [
     {
         name: "Asgaard Sofa",
         price: "Rs. 250,000.00",
@@ -62,7 +69,7 @@ const products = [
     },
 ];
 
-const sections = [
+const sections: { title: string; keys: string[] }[] = [
     {
         title: "General",
         keys: [
@@ -172,7 +179,7 @@ export default function ComparePage() {
                             const v2 = products[1].specs[key] || "-";
 
                             return (
-                                <>
+                                <div key={i}>
                                     {/* Label */}
                                     <div
                                         key={key}
@@ -190,7 +197,7 @@ export default function ComparePage() {
                                     <div className="py-3 text-sm">
                                         {v2}
                                     </div>
-                                </>
+                                </div>
                             );
                         })}
                     </div>

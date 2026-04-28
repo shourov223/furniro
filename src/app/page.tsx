@@ -15,8 +15,6 @@ const HomePage = () => {
       <OurProducts />
       <Explore />
       <FuniroFurniture />
-
-      <ComparisonSection />
     </main>
   );
 }
