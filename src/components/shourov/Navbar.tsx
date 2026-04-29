@@ -7,9 +7,9 @@ import wishlist from "@/assets/icons/wishlist.svg";
 
 const Navbar = () => {
   return (
-    <nav className="py-[30px] bg-white">
-      <div className="container">
-        <div className="flex items-center justify-between gap-4">
+    <nav className="h-[100px] bg-white fixed top-0 z-100 w-screen">
+      <div className="container h-full">
+        <div className="flex items-center justify-between gap-4 h-full">
           <Link href={"/"} className="flex items-center gap-[5px]">
             <div>
               <Image src={"/logo.svg"} alt="logo" width={50} height={32} />
@@ -34,7 +34,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link className="font-medium text-base text-black" href={"/blog"}>
-                About
+                Blog
               </Link>
             </li>
             <li>

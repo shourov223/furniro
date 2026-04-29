@@ -9,7 +9,7 @@ import OurProducts from "@/components/shourov/OurProducts";
 
 const HomePage = () => {
   return (
-    <main>
+    <main className="mt-[100px]">
       <Banner />
       <BrowseTheRange />
       <OurProducts />

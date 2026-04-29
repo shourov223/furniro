@@ -3,8 +3,8 @@ import CommonBtn from "./CommonBtn";
 
 const Banner = () => {
   return (
-    <section className="bg-[url('../assets/images/home-banner.jpg')] bg-cover bg-center py-[153px]">
-      <div className="container">
+    <section className="bg-[url('../assets/images/home-banner.jpg')] bg-cover bg-center py-[153px] h-[calc(100vh-100px)]">
+      <div className="container flex h-full items-center">
         <div className="pt-[62px] pr-[43px] pb-[37px] pl-[39px] bg-[#FFF3E3] rounded-[10px] max-w-[643px] ml-auto">
           <p className="text-black text-base tracking-[3px] font-semibold pb-1.5">
             New Arrival

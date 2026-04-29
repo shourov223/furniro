@@ -2,7 +2,7 @@ import ProductComparison from "@/components/munna/ProductComparison";
 
 const ProductComparisonPage = () => {
     return (
-        <main>
+        <main className="mt-[100px]">
             <ProductComparison />
         </main>
     )
