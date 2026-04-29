@@ -2,8 +2,27 @@ import Image from "next/image"
 import img from "@/assets/images/sofa.png"
 import sofa from "@/assets/images/sofa2.png"
 import Rating from "@/components/Emam/Rating"
+import SizeCard from "@/components/Emam/SizeCard"
+// import { title } from "process"
 
-const page = () => {
+
+export interface Product {
+    title:string;
+    price: number;
+    rating: number;
+    review:string;
+    description:string
+}
+
+
+
+const page = ({
+    title="Asgaard sofa",
+    price= 250000 ,
+    rating= 4.6,
+    review= "5 Customer Review",
+    description="Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound"
+}, Product:Product[]) => {
   return (
     <>
       <section className="Product_details py-10">
@@ -22,13 +41,29 @@ const page = () => {
                     </div>
                 </div>
                 <div>
-                    <h2 className="text-[42px] font-normal ">Asgaard sofa</h2>
-                    <p className="font-medium text-2xl text-[#9F9F9F] ">Rs. 250,000.00</p>
+                    <h2 className="text-[42px] font-normal ">{title}</h2>
+                    <p className="font-medium text-2xl text-[#9F9F9F] ">Rs. {price}</p>
                     <div className="flex items-center gap-5 mt-[15px]">
-                        <Rating rating={4.6} />
-                        <span className="text-[13px] font-normal text-[#9F9F9F] border-l-2  px-3">5 Customer Review</span>
+                        <Rating rating={rating} />
+                        <span className="text-[13px] font-normal text-[#9F9F9F] border-l-2  px-3">{review}</span>
                     </div>
-                    <p className="w-[424px] text-[13px] h-[80px] mt-[18px]  ">Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.</p>
+                    <p className="w-106 text-[13px] h-20 mt-4.5  ">{description}</p>
+                    <div className="mt-[22px]">
+                        <p className="text-[13px] text-[#9F9F9F] ">size</p>
+                        <div className="mt-[12px] flex gap-[16px] items-center ">
+                            <SizeCard p="S" />
+                            <SizeCard p="M" />
+                            <SizeCard p="L" />
+                        </div>
+                    </div>
+                    <div className="mt-[22px]">
+                        <p className="text-[13px] text-[#9F9F9F] ">Color</p>
+                        <div className="mt-[12px] flex gap-[16px] items-center ">
+                            <div className="w-[30px] h-[30px] bg-[#816DFA] rounded-full" />
+                            <div className="w-[30px] h-[30px] bg-black rounded-full" />
+                            <div className="w-[30px] h-[30px] bg-[#B88E2F] rounded-full" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
