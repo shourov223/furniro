@@ -51,6 +51,7 @@ const CartPage = () => {
                 <p>Total</p>
                 <p className="text-[#B88E2F]">Rs. 250,000.00</p>
               </div>
+              
             </div>
           </div>
         </div>
