@@ -1,8 +1,11 @@
+"use client"
 import Image from "next/image"
 import img from "@/assets/images/sofa.png"
 import sofa from "@/assets/images/sofa2.png"
 import Rating from "@/components/Emam/Rating"
 import SizeCard from "@/components/Emam/SizeCard"
+import CommonBtn from "@/components/shourov/CommonBtn"
+import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa"
 // import { title } from "process"
 
 
@@ -11,6 +14,9 @@ export interface Product {
     price: number;
     rating: number;
     review:string;
+    suku:string;
+    Tags:string;
+    Category:string;
     description:string
 }
 
@@ -21,6 +27,9 @@ const page = ({
     price= 250000 ,
     rating= 4.6,
     review= "5 Customer Review",
+    suku='SS001',
+    Category='Sofa',
+    Tags='Sofa, Chair, Home, Shop',
     description="Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound"
 }, Product:Product[]) => {
   return (
@@ -64,6 +73,43 @@ const page = ({
                             <div className="w-[30px] h-[30px] bg-[#B88E2F] rounded-full" />
                         </div>
                     </div>
+                    {/* <div className="mt-[32px]">
+                        <CommonBtn TagName="button">click</CommonBtn>
+                    </div> */}
+                    <hr  className="w-[605px] text-[#9F9F9F] mt-10"/>
+                    <div className="space-y-4 text-gray-500 font-sans mt-10">
+                        <div className="grid grid-cols-[100px_20px_1fr] gap-y-4 items-center">
+                            
+                            <span className="text-lg">SKU</span>
+                            <span>:</span>
+                            <span className="text-gray-400">{suku}</span>
+
+                            <span className="text-lg">Category</span>
+                            <span>:</span>
+                            <span className="text-gray-400">{Category}</span>
+
+                            <span className="text-lg">Tags</span>
+                            <span>:</span>
+                            <span className="text-gray-400">{Tags}</span>
+
+                            <span className="text-lg">Share</span>
+                            <span>:</span>
+                            <div className="flex gap-4 text-black text-2xl">
+                                <FaFacebook className="cursor-pointer" />
+                                <FaLinkedin className="cursor-pointer" />
+                                <FaTwitter className="cursor-pointer" />
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+            <hr  className="text-[#9F9F9F] mt-10 w-full"/>
+
+            <div className="flex justify-center items-center">
+                <div className="flex  gap-10">
+                    <span  className="text-2xl font-medium  " >Description</span>
+                    <span  className="text-2xl font-medium text-[#9F9F9F]  ">Additional Information</span>
+                    <span  className="text-2xl font-medium text-[#9F9F9F] ">Reviews {review}</span>
                 </div>
             </div>
         </div>
