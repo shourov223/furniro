@@ -1,3 +1,4 @@
+import CommonBtn from "../shourov/CommonBtn";
 import CartMini from "./CartMini";
 
 export interface CartItem {
@@ -51,7 +52,9 @@ const CartPage = () => {
                 <p>Total</p>
                 <p className="text-[#B88E2F]">Rs. 250,000.00</p>
               </div>
-              
+              <div className="flex justify-center items-center ">
+                <CommonBtn variant="secondary" size="md">Submit</CommonBtn>
+              </div>
             </div>
           </div>
         </div>
