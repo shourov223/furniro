@@ -1,12 +1,13 @@
-"use client"
+// "use client"
 import Image from "next/image"
 import img from "@/assets/images/sofa.png"
 import sofa from "@/assets/images/sofa2.png"
 import Rating from "@/components/Emam/Rating"
 import SizeCard from "@/components/Emam/SizeCard"
-import CommonBtn from "@/components/shourov/CommonBtn"
-import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa"
 import ssofa from "@/assets/images/SSofa.png"
+import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa"
+import fetchData from "@/api/ProductAPI"
+import ProductCard from "@/components/shourov/ProductCard"
 
 export interface Product {
     title:string;
@@ -21,13 +22,22 @@ export interface Product {
     description:string
 }
 
+interface data {
+  thumbnail: string;
+  category: string;
+  availabilityStatus: string;
+  discountPercentage: number;
+  oldPrice: number;
+  price: number;
+  title: string;
+  id: number;
+}
 
 
-const page = ({
+const page = async ({
     title="Asgaard sofa",
     price= 250000 ,
     rating= 4.6,
-    
     review= "5 Customer Review",
     suku='SS001',
     Category='Sofa',
@@ -36,6 +46,10 @@ const page = ({
     des1="Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.",
     des2="Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.",
 }, Product:Product[]) => {
+
+    const AllProducts: data[] = await fetchData()
+    console.log(AllProducts)
+  
   return (
     <>
       <section className="Product_details py-10">
@@ -132,7 +146,25 @@ const page = ({
                 <div className="flex justify-center items-center">
                     <h3 className="font-medium text-4xl">Related Products</h3>
                 </div>
-                
+                <div className="flex justify-between gap-8 mt-[26px]">
+                        {
+                            AllProducts.slice(0,4).map((item)=>{
+                                return(
+                                    <ProductCard  
+                                    key={item.id}
+                                    // id={item.id}
+                                    img={item.thumbnail}
+                                    productName={item.title}
+                                    price={Math.round(item.price - (item.price * item.discountPercentage) / 100)}
+                                    category={item.category}
+                                    oldPrice={item.price}
+                                    discountPercentage={item.discountPercentage}
+                                    availabilityStatus={item.availabilityStatus}
+                                    />
+                                )
+                            })
+                        }
+                </div>
             </div>
         </div>
       </section>
