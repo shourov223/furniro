@@ -3,6 +3,7 @@ import icon_2 from "@/assets/icons/call.png"
 import icon_3 from "@/assets/icons/clock.png"
 import Image from "next/image"
 import { FormInput } from "./FormInput"
+import CommonBtn from "../shourov/CommonBtn"
 
 export const ContactForm = () => {
     const contactItems = [
@@ -23,14 +24,14 @@ export const ContactForm = () => {
         }
     ]
     return (
-        <section className="pt-[98px] pb-[63px]">
+        <section className="pt-[98px] pb-[63px] ">
             <div className="container">
-                <div>
+                <div className="max-w-[1058px] mx-auto">
                     <div className="text-center">
                         <h2 className="font-semibold text-[#000000] text-[36px]">Get In Touch With Us</h2>
                         <p className="pt-2 text-[16px] text-[#9F9F9F] max-w-[644px] mx-auto">For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!</p>
                     </div>
-                    <div className="max-w-[530px] pt-[133px]">
+                    <div className="w-full pt-[133px] flex justify-between">
                         <div className="space-y-[42px]">
                             {
                                 contactItems.map((el, index) => {
@@ -42,18 +43,19 @@ export const ContactForm = () => {
                                             <div>
                                                 <h2 className="font-medium text-[#000000] text-[24px]">{el.title}</h2>
                                                 <p className="max-w-[212px] text-[16px] text-[rgba(0,0,0,0.59)]">{el.des}</p>
-                     
-                                           </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 })
                             }
                         </div>
-                        <div className="space-y-[36px]">
-                            <FormInput id={"Abc"} inputName={"Your Name"} placeholder={"Abc"}/>
-                            <FormInput id={"Abc@def.com"} inputName={"Email address"} placeholder={"Abc@def.com"}/>
-                            <FormInput id={"This is an optional"} inputName={"Subject"} placeholder={"This is an optional"}/>
-                            <FormInput id={"Hi! i’d like to ask about"} inputName={"Message"} placeholder={"Hi! i’d like to ask about"}/>
+                        <div className="space-y-[36px] max-w-[635px] w-full px-[55px]">
+                            <FormInput id={"Abc"} inputName={"Your Name"} placeholder={"Abc"} />
+                            <FormInput id={"Abc@def.com"} inputName={"Email address"} placeholder={"Abc@def.com"} />
+                            <FormInput id={"This is an optional"} inputName={"Subject"} placeholder={"This is an optional"} />
+                            <FormInput id={"Hi! i’d like to ask about"} inputName={"Message"} placeholder={"Hi! i’d like to ask about"} />
+                            <CommonBtn TagName="button" className="bg-[#B8892A] text-white text-[13px] font-semibold py-3 tracking-wide hover:bg-[#a07820] transition-colors rounded-sm px-[60px]">Submit</CommonBtn>
                         </div>
                     </div>
                 </div>

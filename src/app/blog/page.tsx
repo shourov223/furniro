@@ -12,7 +12,7 @@ import recentblog1 from "@/assets/icons/recentBlog-1.png"
 
 const BlogPage = () => {
   return (
-    <main>
+    <main className="mt-[100px]">
       <CommonBanner pageName='Blog' />
       <section className='py-[100] px-[40px]'>
         <div className='max-w-[1240px] w-full mx-auto flex items-start justify-between gap-[30px]'>

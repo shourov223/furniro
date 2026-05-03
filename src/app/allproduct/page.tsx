@@ -4,7 +4,7 @@ import CommonBanner from "@/components/siam/CommonBanner";
 
 const AllProduct = () => {
   return (
-    <main>
+    <main className="mt-[100px]">
       <CommonBanner pageName="Shop" />
       <FilterComponent />
       <AllProductSection />

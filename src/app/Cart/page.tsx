@@ -4,11 +4,11 @@ import Service from '@/components/siam/Service'
 
 const page = () => {
   return (
-    <div>
+    <main className="mt-[100px]">
         <CommonBanner pageName='cart'/>
         <CartPage />
         <Service />
-    </div>
+    </main>
   )
 }
 
