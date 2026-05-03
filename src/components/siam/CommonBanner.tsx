@@ -1,6 +1,7 @@
 import Image from "next/image";
 import bannerlogo from "@/assets/icons/banner-logo.png";
 import bannerIcon from "@/assets/icons/banner-icon.png";
+import Link from "next/link";
 
 const CommonBanner = ({ pageName }: { pageName: string }) => {
   return (
@@ -13,7 +14,9 @@ const CommonBanner = ({ pageName }: { pageName: string }) => {
           <h2 className="text-[48px] font-medium">{pageName}</h2>
           <div className="text-center ">
             <div className="flex items-center justify-center gap-3">
-              <h3 className="text-4 font-medium text-[#000000]">Home</h3>
+              <Link href={"/"} className="text-4 font-medium text-[#000000]">
+                Home
+              </Link>
               <div className="text-center">
                 <Image src={bannerIcon} alt="" height={10} width={10} />
               </div>
