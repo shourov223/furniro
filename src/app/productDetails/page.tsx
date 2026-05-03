@@ -48,12 +48,20 @@ const page = async ({
 }, Product:Product[]) => {
 
     const AllProducts: data[] = await fetchData()
-    console.log(AllProducts)
   
   return (
     <>
       <section className="Product_details py-10">
-        <div className="container">
+            <div className=" bg-[#F9F1E7] py-[38px] mb-15">
+                <div className="container flex items-center gap-5 ">
+                    <span>Home</span>
+                    <span> \ </span>
+                    <span> Shop </span>
+                    <p className="py-[6px] px-[34px] border-l-2 border-[#9F9F9F] ">Asgaard sofa</p>
+
+                </div>
+            </div>
+        <div className="container ">
             <div className="flex gap-21">
                 <div className="flex">
                     <div className="">
@@ -165,6 +173,7 @@ const page = async ({
                             })
                         }
                 </div>
+
             </div>
         </div>
       </section>
