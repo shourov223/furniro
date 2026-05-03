@@ -1,5 +1,5 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import shrare from "@/assets/icons/share.svg";
 import compare from "@/assets/icons/compare.svg";
 import like from "@/assets/icons/like.svg";
@@ -7,7 +7,7 @@ import { useCartStore } from "@/providers/cart-store-provider";
 
 export interface ProductCardProps {
 	id?: string | number;
-	img: string | StaticImageData ;
+	img: string;
 	productName: string;
 	price: number;
 	category: string;
@@ -17,6 +17,7 @@ export interface ProductCardProps {
 }
 
 const ProductCard = ({
+	id,
 	img,
 	productName,
 	price,
@@ -42,7 +43,8 @@ const ProductCard = ({
 								oldPrice,
 								discountPercentage,
 								availabilityStatus,
-                quantity:1
+								quantity: 1,
+								id
 							})
 						}
 						className="py-3 px-[52px] bg-white whitespace-nowrap text-[#E89F71] font-semibold cursor-pointer grid place-items-center mb-[20px] block mx-auto"

@@ -23,6 +23,7 @@ const OurProducts = async () => {
         <div className="grid grid-cols-4 gap-[32px] items-center">
           {allData?.slice(0, 8).map((product) => (
             <ProductCard
+            id={product.id}
               key={product.id}
               img={product.thumbnail}
               productName={product.title}
