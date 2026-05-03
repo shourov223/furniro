@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import shrare from "@/assets/icons/share.svg";
 import compare from "@/assets/icons/compare.svg";
 import like from "@/assets/icons/like.svg";
@@ -7,7 +7,7 @@ import { useCartStore } from "@/providers/cart-store-provider";
 
 export interface ProductCardProps {
 	id?: string | number;
-	img: string;
+	img: string | StaticImageData ;
 	productName: string;
 	price: number;
 	category: string;

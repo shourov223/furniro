@@ -60,9 +60,11 @@ const Navbar = () => {
 						<div>
 							<Image src={wishlist} alt="wishlist" width={28} height={28} />
 						</div>
-						<Link href={"/cart"}>
+						<Link href={"/cart"} className="flex relative">
 							<Image src={cartIcon} alt="cart" width={28} height={28} />
-							<span>{cart.length}</span>
+							<div className="bg-red-500 w-[30px] h-[30px] absolute -top-4 -right-6 text-white text-xs flex justify-center items-center py-1 px-1  rounded-full">
+								<span className=" ">{cart.length}</span>
+							</div>
 						</Link>
 					</div>
 				</div>
