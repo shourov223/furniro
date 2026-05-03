@@ -5,13 +5,13 @@ import { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
   variant: {
     primary: "bg-blue-600 text-white hover:bg-blue-700 shadow-md",
     secondary: "bg-gray-200 text-gray-900 hover:bg-gray-300",
-    outline: "border-2 border text-black hover:bg-[#B88E2F] hover:text-white  ",
+    outline: "text-black hover:bg-[#B88E2F] hover:text-white border-transparent ",
     danger: "bg-red-600 text-white hover:bg-red-700",
   },
   size: {
     sm: "px-3 py-1.5 text-sm",
     md: "px-5 py-2.5 text-base",
-    lg: "py-[17px] px-[47px] text-[20px]",
+    lg: "py-[17px] px-[47px] text-[20px] border-2  border-[#9F9F9F]  ",
   },
 } as const; 
 
@@ -37,7 +37,7 @@ const CommonBtn = <T extends ElementType = "button">({
   return (
     <Component
       className={cn(
-        "inline-flex items-center justify-center rounded-lg transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:pointer-events-none",
+        "flex items-center justify-center rounded-lg cursor-pointer",
         BUTTON_VARIANTS.variant[variant],
         BUTTON_VARIANTS.size[size],
         className
